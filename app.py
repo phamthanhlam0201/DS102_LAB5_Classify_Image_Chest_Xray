@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect, jsonify
 import numpy as np
 import cv2
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
 from sklearn.preprocessing import LabelEncoder
 import os
 import joblib
@@ -9,7 +10,8 @@ import joblib
 # Tạo ứng dụng Flask
 app = Flask(__name__)
 
-model = LogisticRegression()
+# model = LogisticRegression()
+model = SVC()
 # Load model Logistic Regression đã được huấn luyện
 model = joblib.load('SVC_model.pkl')
 
